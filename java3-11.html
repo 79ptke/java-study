@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바3-11</title>
+</head>
+<body>
+    <h1>아이템 가격과 재고 표시하기</h1>
+
+    <table>
+        <tr>
+            <td id="title"></td>
+            <td id="price"></td>
+            <td id="stock"></td>
+        </tr>
+    </table>
+
+    <style>
+        table {
+            border: 1px solid orange;
+            border-radius: 4px;
+        }
+        td {
+            padding: 0 10px;
+            border: 1px solid orange;
+        }
+    </style>
+
+    <script>
+
+        var jsbook = {title : '자바스크립트 입문', price : 2500, stock : 3};
+        /*console.log(jsbook);
+        console.log(jsbook.title);
+        console.log(jsbook['price']);
+        jsbook.stock = 10;
+        console.log (jsbook.stock);*/
+        
+        for (var p in jsbook) {
+            console.log(p + '=' + jsbook[p]);
+        }
+
+        document.getElementById('title').textContent = jsbook.title;
+        document.getElementById('price').textContent = jsbook.price + '원';
+        document.getElementById('stock').textContent = jsbook.stock;
+
+    </script>
+</body>
+</html>

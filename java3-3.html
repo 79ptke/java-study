@@ -4,21 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>자바3-2</title>
+    <title>자바3-3</title>
 </head>
 <body>
+    <h1>대답에 따른 입력창 변화 자바스크립트</h1>
     <script>
-        // var answer = window.prompt('도움말을 보시겠습니까?');
-        // console.log(answer);
-
-        // var answer = 'yes';
-        // console.log(answer);
-        // answer = 'no';
-        // console.log(answer);
-
         var answer = window.prompt('도움말을 보시겠습니까?');
         if(answer === 'yes') {
             window.alert('탭키로 점프해서 장해물을 피합니다.');
+        } else if (answer === 'no') {
+            window.alert('게임 진행 중...');
+        } else {
+            window.alert('yes 또는 no로 대답해 주세요.');
         }
     </script>
 </body>
