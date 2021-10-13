@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4-4</title>
+</head>
+<body>
+    <h1>소수점 자릿수 버리기</h1>
+
+    <section>
+        <p> 원주율은
+            <span>
+                <script>
+                    document.write(Math.PI);
+                </script>
+            </span>
+            이다.
+        </p>
+        <p> 그냥 버리면
+            <span>
+                <script>
+                    document.write(Math.floor(Math.PI));
+                </script>
+            </span>
+            이다.
+        </p>
+        <p>소수점 두 번째 자리에서 버리면 <span id="output"></span>이다.</p>
+    </section>
+
+    <script>
+        var point = function(num, digit) {
+            var time = Math.pow(10, digit);
+            return Math.floor(num * time) / time;
+        }
+
+        document.getElementById('output').textContent = point(Math.PI, 2);
+    </script>
+</body>
+</html>
