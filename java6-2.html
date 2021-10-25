@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./css/style.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+    <title>6-2</title>
+</head>
+<body>
+    <h1>박스 열고 닫기</h1>
+
+    <div id="box">
+        <ul>
+            <li>홈</li>
+            <li>회사 안내</li>
+            <li>업무 안내</li>
+            <li>고객 지원</li>
+            <li>문의</li>
+        </ul>
+    </div>
+    <header>
+        <div class="header-contents">
+            <div id="box_btn">Menu</div>
+            <h1>박스 열고 닫기</h1>
+            <h2>애니메이션 기능 사용</h2>
+        </div>
+    </header>
+    <div class="main-wrapper"></div>
+
+    <style>
+        #box {
+            display: none;
+            margin: 0 auto;
+            max-width: 960px;
+        }
+        #box ul {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+        #box li {
+            padding: 8px 0;
+            color: #20567d;
+            border-bottom: 1px solid #fff;
+        }
+        .header-contents {
+            position: relative;
+        }
+        #box_btn {
+            position: absolute;
+            top: 0;
+            right: 0;
+            border-radius: 0 0 8px 8px;
+            padding: 6px 20px;
+            background: #fff;
+            cursor: pointer;
+        }
+    </style>
+
+    <script>
+        $(document).ready(function() {
+            $('#box_btn').on('click', function() {
+                $('#box').slideToggle();
+            });
+        });
+    </script>
+
+</body>
+</html>
