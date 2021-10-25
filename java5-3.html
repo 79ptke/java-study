@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="cookie.js"></script>
+
+    <title>5-3</title>
+</head>
+<body>
+    <h1>설문지 응답은 한 번만!</h1>
+
+    <section>
+        <p>영화관에 가시나요?</p>
+        <form action="java5-3-thankyou.html" id="form">
+            <input type="radio" name="frequency"> 주에 1회 이상 <br>
+            <input type="radio" name="frequency"> 월에 1회 정도 <br>
+            <input type="radio" name="frequency"> 1년 2~3회 정도 <br>
+            <input type="radio" name="frequency"> 거의 가지 않는다 <br>
+            <input type="submit" name="전송하기" id="submit"> <br>
+        </form>
+        <button id="remove">쿠키 삭제</button>
+    </section>
+
+    <script>
+        document.getElementById('form').onsubmit = function(){
+            if(Cookies.get('answered') === 'yes') {
+                window.alert('이미 응답했습니다. 설문지 응답은 한 번만 가능합니다.');
+                return false;
+            } else {
+                Cookies.set('answered', 'yes', {expires: 7});
+            }
+        };
+        document.getElementById('remove').onclick = function() {
+            Cookies.remove('answered');
+        };
+    </script>
+
+</body>
+</html>
